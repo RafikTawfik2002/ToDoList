@@ -16,9 +16,9 @@ function newTask(task, id) {
 
 function display() {
     let text = `<span>You finished all your tasks 😁</span>`;
-    let left = id-done+1;
+    let left = id-done;
     if (left > 1) {
-        text = `You have ${id-done+1} tasks out ${id+1} to get done`;
+        text = `You have ${left} tasks out ${id} to get done`;
     }
     else if (left > 0){
         text = `You only have one task left`;
