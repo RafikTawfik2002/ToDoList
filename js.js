@@ -4,10 +4,9 @@ const ele = document.getElementById('thelist');
 const put = document.getElementById('task');
 
 
-
+const count = 0; //keeps track if total number of tasks
 
 function newTask(task, id) {
-
     return `<li>
 <input onclick='switchState(${id})' type="checkbox" name="${id}" class="check" id="0${id}"/>
 <label id="${id}" for="${id}">${task}</label>
@@ -16,9 +15,9 @@ function newTask(task, id) {
 
 function display() {
     let text = `<span>You finished all your tasks 😁</span>`;
-    let left = id-done;
+    let left = count-done;
     if (left > 1) {
-        text = `You have ${left} tasks out ${id} to get done`;
+        text = `You have ${left} tasks out ${count} to get done`;
     }
     else if (left > 0){
         text = `You only have one task left`;
@@ -59,10 +58,12 @@ function addTask(task){
         put.value = ''
         console.log("id is equal to zero so replace");
         id += 1;
+        count += 1;
         return;
     }
-    console.log("id os more than 0 so add an element");
+    console.log("id 1s more than 0 so add an element");
     id += 1;
+    count += 1;
     ele.innerHTML += newTask(task, id)
     put.value = ''
 }
@@ -76,5 +77,6 @@ function switchState(id) {
         document.getElementById(`${id}`).style["text-decoration"] = "none";
         done -= 1;
     }
+    console.log();
     display();
 }
