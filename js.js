@@ -69,8 +69,6 @@ function addTask(task){
 }
 
 function switchState(id) {
-    console.log("switched state worked");
-    if(id == 0){return;}
     console.log(`Element number ${id+1}`);
     if (document.getElementById(`0${id}`).checked) {
         document.getElementById(`${id}`).style["text-decoration"] = "line-through";
