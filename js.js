@@ -77,6 +77,6 @@ function switchState(id) {
         document.getElementById(`${id}`).style["text-decoration"] = "none";
         done -= 1;
     }
-    console.log();
+    console.log(`done is ${done}`);
     display();
 }
